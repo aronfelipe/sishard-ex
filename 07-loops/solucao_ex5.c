@@ -4,51 +4,44 @@
  * 
  * Chame sua função de ex5_solucao */
  
-long ex5_solucao(long rdi, long rcx, long rdx){
+long ex5_solucao(long rdi, long rsi, long rdx){
+
     // mov    $0x0,%ecx
-    int ecx = 0;
-
+    int rcx = 0;
     // mov    $0x0,%r8d
+    long r8d = 0;
 
-    // jmp    0x114a <ex4+17>
+    for(rcx; rcx >= rdi; rcx++) {
+        
+        // cmp    %rdi,%rcx
+        if (rcx >= rdi) {
+            
+            // jge    0x1161 <ex4+40>
+            // mov    %r8,%rax
+            long rax = r8d;
 
-    // cmp    %rdi,%rcx
-    if (rdi >= rcx) {
+            // retq
+            return rax;
+        } else {
+            // mov    %rcx,%rax
+            long rax = rcx;
 
-        // mov    %r8,%rax
-        long rax = "r8";
+            // cqto
+            // Aumenta o registrador de %rax para um registrador de 128 bits
+            // Nada em C
 
-        // retq
-        return rax
+            // idiv   %rsi
+            // Divisão de %rax por %rsi
+            rax = rax/rsi;
 
-    } else {
+            // Divisão de %rax por %rsi
+            rdx = rax % rsi;
 
-        // mov    %rcx,%rax
-        long rax = rcx;
-
-        // cqto
-
-        // idiv   %rsi
-
-        // test   %rdx,%rdx
-        // jne    0x1146 <ex4+13>
-        if (rdx != 0) {
-
-            // add    $0x1,%rcx
-            rcx += 1;
-
-            // cmp    %rdi,%rcx
-            if (rdi >= rcx) {
-                long rax = "r8";
-
-                // retq
-                return rax;
-                
-            } else{
-
+            // test   %rdx,%rdx
+            // jne    0x1146 <ex4+13>
+            if (rdx == 0) {
+                r8d += rcx;
             }
         }
-
     }
-
 }

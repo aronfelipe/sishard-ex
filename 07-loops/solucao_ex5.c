@@ -9,7 +9,7 @@ long ex5_solucao(long rdi, long rsi, long rdx){
     // mov    $0x0,%ecx
     int rcx = 0;
     // mov    $0x0,%r8d
-    long r8d = 0;
+    int r8d = 0;
 
     for(rcx; rcx >= rdi; rcx++) {
         

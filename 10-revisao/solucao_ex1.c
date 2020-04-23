@@ -26,4 +26,4 @@ int solucao_ex1() {
     // mov    %ebx,%eax
     eax = ebx;
     return eax;
-} 
+}

@@ -5,10 +5,11 @@
 
 /* Recebe duas strings e concatena em uma terceira */
 char *mystrcat(char *str1, char *str2) {
-    return NULL;
+    char *vetor = malloc(strlen(str1) + strlen(str2) + 1);
+    strcpy(vetor, str1);
+    strcat(vetor, str2);
+    return vetor;
 }
-
-
 
 int main(int argc, char *argv[]) {
     # define teste1 "str1"

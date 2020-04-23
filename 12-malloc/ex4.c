@@ -4,7 +4,10 @@
 #include "macros_correcoes.h"
 
 char *mystrcpy(char *stroriginal) {
-    return NULL;
+    int i;
+    int n = strlen(stroriginal) + 1;
+    int *vetor = malloc(n);
+    return strcpy(vetor, stroriginal);
 }
 
 int main(int argc, char *argv[]) {

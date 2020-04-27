@@ -1,7 +1,5 @@
 #include "mintest/macros.h"
 #include "point2d.h"
-#include "point2d.c"
-
 
 int test_new_destroy_get() {
     Point2D *p = point2D_new(0, 0);
